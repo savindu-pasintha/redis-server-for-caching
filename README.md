@@ -29,6 +29,8 @@ redis-cli
 ## sudo npm install -g pm2
 ## nano redis.config.js
 ## copy the bellow Text
+## mkdir -p ./redis-logs
+## chmod 755 ./redis-logs
 
 `
 module.exports = {
@@ -40,9 +42,9 @@ module.exports = {
       autorestart: true,
       watch: false,
       max_memory_restart: '1G',  // Optional: adjust memory limit as needed
-      log_file: '/var/log/redis/redis-server.log',
-      out_file: '/var/log/redis/redis-server.out.log',
-      error_file: '/var/log/redis/redis-server.err.log'
+      log_file: './redis-logs/redis-server.log',
+      out_file: './redis-logs/redis-server.out.log',
+      error_file: './redis-logs/redis-server.err.log'
     }
   ]
 };
